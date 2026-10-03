@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17345D">
+<meta name="description" content="AdvanTEK Engineering Ltd. - Engineering, Training and Skill Development">
+<title>AdvanTEK Engineering Ltd.</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f3f7fb;
+  color:#172b45;
+  line-height:1.6;
+}
+
+.container{
+  width:min(100% - 28px,720px);
+  margin:auto;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  background:linear-gradient(145deg,#102c50,#1c5d8d);
+  color:#fff;
+  padding:30px 18px 34px;
+  text-align:center;
+  border-radius:0 0 28px 28px;
+  box-shadow:0 8px 25px #102c5026;
+}
+
+.logo{
+  width:105px;
+  height:105px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:50%;
+  padding:8px;
+  margin-bottom:12px;
+}
+
+h1{
+  font-size:27px;
+  margin-bottom:5px;
+}
+
+.tagline{
+  font-size:15px;
+  color:#bfe7ff;
+}
+
+/* ================= CARD ================= */
+
+.card{
+  background:#fff;
+  margin:16px 0;
+  padding:22px;
+  border-radius:20px;
+  box-shadow:0 5px 18px #17345d12;
+}
+
+.card h2{
+  font-size:20px;
+  margin-bottom:14px;
+  color:#17345d;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+  color:#4b5d70;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.service{
+  background:#f1f7fc;
+  border:1px solid #dbeaf5;
+  padding:11px;
+  border-radius:12px;
+  font-size:14px;
+}
+
+/* =====================================================
+   COMPANY LOGO SLIDER
+===================================================== */
+
+.company-slider{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+
+.company-track{
+  display:flex;
+  gap:12px;
+  transition:transform .6s ease;
+}
+
+.company-item{
+  min-width:calc(33.333% - 8px);
+  height:130px;
+  background:#f8fbfe;
+  border:1px solid #dbeaf5;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+}
+
+.company-item img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.company-name{
+  text-align:center;
+  font-size:13px;
+  font-weight:bold;
+  color:#17345d;
+}
+
+/* Company arrows */
+
+.slider-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:34px;
+  height:34px;
+  border:none;
+  border-radius:50%;
+  background:#17345d;
+  color:#fff;
+  font-size:20px;
+  cursor:pointer;
+  z-index:5;
+  box-shadow:0 3px 10px #0002;
+}
+
+.slider-btn:hover{
+  background:#2998cf;
+}
+
+.prev-company{
+  left:5px;
+}
+
+.next-company{
+  right:5px;
+}
+
+/* ================= COMPANY DOTS ================= */
+
+.company-dots{
+  text-align:center;
+  margin-top:12px;
+}
+
+.company-dot{
+  display:inline-block;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#bfd5e6;
+  margin:0 4px;
+  cursor:pointer;
+}
+
+.company-dot.active{
+  background:#17345d;
+}
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery-slider{
+  position:relative;
+  overflow:hidden;
+  border-radius:16px;
+}
+
+.gallery-track{
+  display:flex;
+  transition:transform .6s ease;
+}
+
+.gallery-slide{
+  min-width:100%;
+  position:relative;
+}
+
+.gallery-slide img{
+  width:100%;
+  height:310px;
+  object-fit:cover;
+  display:block;
+  border-radius:16px;
+}
+
+.gallery-caption{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:12px;
+  color:#fff;
+  text-align:center;
+  background:linear-gradient(transparent,#000b);
+  border-radius:0 0 16px 16px;
+  font-size:14px;
+  font-weight:bold;
+}
+
+/* Gallery buttons */
+
+.gallery-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:38px;
+  height:38px;
+  border:0;
+  border-radius:50%;
+  background:#17345dcc;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  z-index:5;
+}
+
+.gallery-btn:hover{
+  background:#2998cf;
+}
+
+.prev-gallery{
+  left:10px;
+}
+
+.next-gallery{
+  right:10px;
+}
+
+/* Gallery dots */
+
+.gallery-dots{
+  text-align:center;
+  margin-top:12px;
+}
+
+.gallery-dot{
+  display:inline-block;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:#c4d8e8;
+  margin:0 4px;
+  cursor:pointer;
+}
+
+.gallery-dot.active{
+  background:#17345d;
+}
+
+/* ================= CONTACT ================= */
+
+.contact a,
+.btn{
+  display:block;
+  text-decoration:none;
+}
+
+.contact-row{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  padding:11px 0;
+  border-bottom:1px solid #edf1f5;
+}
+
+.contact-row:last-child{
+  border-bottom:0;
+}
+
+.icon{
+  font-size:21px;
+  width:30px;
+}
+
+.contact-row strong{
+  display:block;
+  color:#17345d;
+}
+
+.contact-row span,
+.contact-row a{
+  color:#506274;
+  word-break:break-word;
+}
+
+/* ================= BUTTONS ================= */
+
+.buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.btn{
+  padding:13px 10px;
+  text-align:center;
+  border-radius:12px;
+  background:#17345d;
+  color:#fff;
+  font-weight:bold;
+  font-size:14px;
+}
+
+.btn.blue{
+  background:#2998cf;
+}
+
+.btn.light{
+  background:#eaf5fc;
+  color:#17345d;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+  text-align:center;
+  padding:22px 10px 35px;
+  color:#718092;
+  font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .company-item{
+    min-width:calc(50% - 6px);
+    height:120px;
+  }
+
+  .gallery-slide img{
+    height:230px;
+  }
+}
+
+@media(max-width:430px){
+
+  .services,
+  .buttons{
+    grid-template-columns:1fr;
+  }
+
+  h1{
+    font-size:24px;
+  }
+
+  .card{
+    padding:18px;
+  }
+
+  .company-item{
+    min-width:100%;
+    height:150px;
+  }
+
+  .gallery-slide img{
+    height:220px;
+  }
+
+}
+
+
+/* ================= CERTIFICATE ================= */
+.certificate-card{
+  text-align:center;
+}
+.certificate-text{
+  color:#667789;
+  font-size:14px;
+  margin-bottom:16px;
+}
+.certificate-download{
+  display:block;
+  width:100%;
+  padding:14px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  background:linear-gradient(135deg,#17345d,#2998cf);
+  color:#fff;
+  font-size:15px;
+  font-weight:bold;
+  box-shadow:0 5px 15px #17345d25;
+  transition:all .3s ease;
+}
+.certificate-download:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px #17345d35;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <img
+      class="logo"
+      src="https://i.ibb.co.com/9C9bGPC/Advan-TEK-Logo-01.png"
+      alt="AdvanTEK Engineering Ltd. logo"
+    >
+
+    <h1>AdvanTEK Engineering Ltd.</h1>
+
+    <p class="tagline">
+      Engineering • Training • Skill Development
+    </p>
+
+  </div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- =====================================================
+     OUR COMPANIES
+===================================================== -->
+
+<section class="card">
+
+  <h2>🏢 Our Companies</h2>
+
+  <div class="company-slider">
+
+    <button class="slider-btn prev-company" onclick="companyPrev()">‹</button>
+
+    <div class="company-track" id="companyTrack">
+
+      <!-- Company 1 -->
+      <div class="company-item">
+        <img
+          src="https://i.ibb.co.com/9C9bGPC/Advan-TEK-Logo-01.png"
+          alt="AdvanTEK Engineering Ltd."
+        >
+      </div>
+
+      <!-- Company 2 -->
+      <div class="company-item">
+        <img
+          src="YOUR-NEDL-LOGO-URL-HERE"
+          alt="NEDL Engineering"
+        >
+      </div>
+
+      <!-- Company 3 -->
+      <div class="company-item">
+        <div class="company-name">
+          COMPANY 03
+        </div>
+      </div>
+
+      <!-- Company 4 -->
+      <div class="company-item">
+        <div class="company-name">
+          COMPANY 04
+        </div>
+      </div>
+
+      <!-- Company 5 -->
+      <div class="company-item">
+        <div class="company-name">
+          COMPANY 05
+        </div>
+      </div>
+
+    </div>
+
+    <button class="slider-btn next-company" onclick="companyNext()">›</button>
+
+  </div>
+
+  <div class="company-dots" id="companyDots"></div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section class="card">
+
+  <h2>🖼️ Gallery</h2>
+
+  <div class="gallery-slider">
+
+    <button
+      class="gallery-btn prev-gallery"
+      onclick="galleryPrev()">
+      ‹
+    </button>
+
+    <div class="gallery-track" id="galleryTrack">
+
+      <!-- Gallery Image 1 -->
+      <div class="gallery-slide">
+
+        <img
+          src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80"
+          alt="Engineering Training"
+        >
+
+        <div class="gallery-caption">
+          Engineering Training & Practical Learning
+        </div>
+
+      </div>
+
+
+      <!-- Gallery Image 2 -->
+      <div class="gallery-slide">
+
+        <img
+          src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=80"
+          alt="Technical Training"
+        >
+
+        <div class="gallery-caption">
+          Professional Technical Training
+        </div>
+
+      </div>
+
+
+      <!-- Gallery Image 3 -->
+      <div class="gallery-slide">
+
+        <img
+          src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+          alt="Engineering Lab"
+        >
+
+        <div class="gallery-caption">
+          Industrial Automation & Engineering Lab
+        </div>
+
+      </div>
+
+
+      <!-- Gallery Image 4 -->
+      <div class="gallery-slide">
+
+        <img
+          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=1000&q=80"
+          alt="Engineering Team"
+        >
+
+        <div class="gallery-caption">
+          AdvanTEK Engineering Team
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="gallery-btn next-gallery"
+      onclick="galleryNext()">
+      ›
+    </button>
+
+  </div>
+
+  <div class="gallery-dots" id="galleryDots"></div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT US
+===================================================== -->
+
+<section class="card">
+
+  <h2>About Us</h2>
+
+  <p class="about">
+
+    AdvanTEK Engineering Ltd. is a skill development and engineering
+    solutions company focused on professional technical training,
+    industrial attachment, practical engineering education and
+    engineering solutions.
+
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="card">
+
+  <h2>Our Services</h2>
+
+  <div class="services">
+
+    <div class="service">
+      Professional Engineering Training
+    </div>
+
+    <div class="service">
+      Industrial Attachment
+    </div>
+
+    <div class="service">
+      Electrical Design & Installation
+    </div>
+
+    <div class="service">
+      PLC • VFD • HMI • SCADA
+    </div>
+
+    <div class="service">
+      Electrical AutoCAD
+    </div>
+
+    <div class="service">
+      Substation Design
+    </div>
+
+    <div class="service">
+      Solar PV System
+    </div>
+
+    <div class="service">
+      Fire Detection & Protection
+    </div>
+
+    <div class="service">
+      Industrial Automation
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="card contact">
+
+  <h2>Contact Information</h2>
+
+  <div class="contact-row">
+
+    <div class="icon">📞</div>
+
+    <div>
+      <strong>Phone</strong>
+      <a href="tel:+8801325180531">
+        01325-180531
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="contact-row">
+
+    <div class="icon">📍</div>
+
+    <div>
+
+      <strong>Address</strong>
+
+      <span>
+        House #14, Road #08, Sector #06,
+        Uttara, Dhaka-1230, Bangladesh
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div class="contact-row">
+
+    <div class="icon">🌐</div>
+
+    <div>
+
+      <strong>Website</strong>
+
+      <a
+        href="https://advantekengineeringltd.com"
+        target="_blank">
+
+        advantekengineeringltd.com
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATE DOWNLOAD
+===================================================== -->
+
+<section class="card certificate-card">
+
+  <h2>🎓 Certificate Download</h2>
+
+  <p class="certificate-text">
+    Download your official AdvanTEK Engineering Ltd. certificate.
+  </p>
+
+  <a
+    class="certificate-download"
+    href="certificates/AdvanTEK-Certificate.pdf"
+    download>
+
+    📥 Download Certificate
+
+  </a>
+
+</section>
+
+<!-- =====================================================
+     CONNECT
+===================================================== -->
+
+<section class="card">
+
+  <h2>Connect With Us</h2>
+
+  <div class="buttons">
+
+    <a
+      class="btn"
+      href="https://advantekengineeringltd.com"
+      target="_blank">
+
+      🌐 Website
+
+    </a>
+
+
+    <a
+      class="btn blue"
+      href="tel:+8801325180531">
+
+      📞 Call Now
+
+    </a>
+
+
+    <a
+      class="btn light"
+      href="https://www.google.com/maps/search/?api=1&query=AdvanTEK+Engineering+Ltd+Uttara+Dhaka"
+      target="_blank">
+
+      📍 Google Maps
+
+    </a>
+
+
+    <a
+      class="btn light"
+      href="https://www.facebook.com/advantekengineering"
+      target="_blank">
+
+      📘 Facebook
+
+    </a>
+
+
+    <a
+      class="btn light"
+      href="https://www.youtube.com/@advantekbd"
+      target="_blank">
+
+      ▶️ YouTube
+
+    </a>
+
+
+    <a
+      class="btn light"
+      href="https://www.linkedin.com/company/advantek-bd/posts/?feedView=all"
+      target="_blank">
+
+      💼 LinkedIn
+
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <p>
+    <strong>AdvanTEK Engineering Ltd.</strong>
+  </p>
+
+  <p>
+    Building Skills, Creating Opportunities.
+  </p>
+
+  <p>
+    © 2026 AdvanTEK Engineering Ltd. All Rights Reserved.
+  </p>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* =====================================================
+   COMPANY SLIDER
+===================================================== */
+
+const companyTrack =
+  document.getElementById("companyTrack");
+
+const companyItems =
+  document.querySelectorAll(".company-item");
+
+let companyIndex = 0;
+
+
+/* Number of visible companies */
+
+function visibleCompanies(){
+
+  if(window.innerWidth <= 430){
+    return 1;
+  }
+
+  if(window.innerWidth <= 600){
+    return 2;
+  }
+
+  return 3;
+
+}
+
+
+/* Company slider */
+
+function updateCompany(){
+
+  const visible = visibleCompanies();
+
+  const itemWidth =
+    companyItems[0].offsetWidth + 12;
+
+  const maxIndex =
+    Math.max(0, companyItems.length - visible);
+
+  if(companyIndex > maxIndex){
+    companyIndex = 0;
+  }
+
+  companyTrack.style.transform =
+    `translateX(-${companyIndex * itemWidth}px)`;
+
+}
+
+
+/* Next */
+
+function companyNext(){
+
+  const visible = visibleCompanies();
+
+  const maxIndex =
+    Math.max(0, companyItems.length - visible);
+
+  companyIndex++;
+
+  if(companyIndex > maxIndex){
+    companyIndex = 0;
+  }
+
+  updateCompany();
+
+}
+
+
+/* Previous */
+
+function companyPrev(){
+
+  const visible = visibleCompanies();
+
+  const maxIndex =
+    Math.max(0, companyItems.length - visible);
+
+  companyIndex--;
+
+  if(companyIndex < 0){
+    companyIndex = maxIndex;
+  }
+
+  updateCompany();
+
+}
+
+
+/* Auto company slider */
+
+setInterval(companyNext,4000);
+
+window.addEventListener("resize",updateCompany);
+
+
+/* =====================================================
+   GALLERY SLIDER
+===================================================== */
+
+const galleryTrack =
+  document.getElementById("galleryTrack");
+
+const gallerySlides =
+  document.querySelectorAll(".gallery-slide");
+
+let galleryIndex = 0;
+
+
+/* Gallery dots */
+
+const galleryDots =
+  document.getElementById("galleryDots");
+
+gallerySlides.forEach((slide,index)=>{
+
+  const dot =
+    document.createElement("span");
+
+  dot.className =
+    "gallery-dot";
+
+  if(index === 0){
+    dot.classList.add("active");
+  }
+
+  dot.onclick = ()=>{
+    galleryIndex = index;
+    updateGallery();
+  };
+
+  galleryDots.appendChild(dot);
+
+});
+
+
+/* Update gallery */
+
+function updateGallery(){
+
+  galleryTrack.style.transform =
+    `translateX(-${galleryIndex * 100}%)`;
+
+  document
+    .querySelectorAll(".gallery-dot")
+    .forEach((dot,index)=>{
+
+      dot.classList.toggle(
+        "active",
+        index === galleryIndex
+      );
+
+    });
+
+}
+
+
+/* Next gallery */
+
+function galleryNext(){
+
+  galleryIndex++;
+
+  if(galleryIndex >= gallerySlides.length){
+    galleryIndex = 0;
+  }
+
+  updateGallery();
+
+}
+
+
+/* Previous gallery */
+
+function galleryPrev(){
+
+  galleryIndex--;
+
+  if(galleryIndex < 0){
+    galleryIndex =
+      gallerySlides.length - 1;
+  }
+
+  updateGallery();
+
+}
+
+
+/* Auto gallery */
+
+setInterval(galleryNext,5000);
+
+</script>
+
+</body>
+</html>
